@@ -1,2 +1,3 @@
-**/*.cmd 
-**/plantuml.jar 
+**/*.cmd
+**/plantuml.jar
+media/receipt-*.png
