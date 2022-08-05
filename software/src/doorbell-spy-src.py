@@ -18,9 +18,9 @@ camera.framerate = 30
 camera.iso = 400 
  
 # Initialize peripheral objects 
-pushButton = Button(2)
-pir = MotionSensor(3)
-led = LED(4)
+led = LED(2)
+pushButton = Button(3)
+pir = MotionSensor(4)
 buzzer = Buzzer(17)
 
 # Initialize the telegram bot object
@@ -54,7 +54,7 @@ try:
     
     # If the button is pressed, capture an image,
     # but also blink the LED and sound the buzzer. 
-    button.when_pressed = blinkAndBuzz
+    pushButton.when_pressed = blinkAndBuzz
     
     pause()
 finally:
