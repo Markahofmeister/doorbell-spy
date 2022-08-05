@@ -8,8 +8,13 @@ from datetime import datetime
 from signal import pause
 from time import sleep
  
-# Initialize peripheral objects 
+# Initialize camera 
 camera = PiCamera()
+camera.resolution=(1280, 720)
+camera.framerate = 30
+camera.iso = 400
+
+# Initialize peripheral objects
 button = Button(3)
 led = LED(2)
 
@@ -17,15 +22,16 @@ led = LED(2)
 # no parameters, no return
 def captureImage():
     timestamp = datetime.now().isoformat()
+    # print(timestamp)
     camera.start_preview()
-    sleep(5)
+    sleep(2)
     camera.capture('/home/pi/Pictures/%s.jpg' % timestamp)
     camera.stop_preview()
 
 # blinks LED for 2 seconds, buzzer sounds for 2 seconds.
 # no parameters, no return
 def blinkAndCap():
-    captureImage
+    captureImage()
     led.blink()
     
 try: 
