@@ -21,7 +21,7 @@ camera.iso = 400
 led = LED(2)
 pushButton = Button(3)
 pir = MotionSensor(4)
-buzzer = Buzzer(17)
+buzzer = Buzzer(18)
 
 # Initialize the telegram bot object
 doorbellBot = telepot.Bot('5488078961:AAFaJivap_jWBhUzhWMHzKn7p_KTUw9bpF0')
@@ -47,7 +47,7 @@ def blinkAndBuzz():
     captureImage()
     led.blink(2,1)
     buzzer.beep(2,1,1,True)
-    
+
 
 try:
     # Just capture an image when motion is detected
