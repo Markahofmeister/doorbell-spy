@@ -26,6 +26,7 @@ buzzer = Buzzer(17)
 # Initialize the telegram bot object
 doorbellBot = telepot.Bot('5488078961:AAFaJivap_jWBhUzhWMHzKn7p_KTUw9bpF0')
 
+# Posts image to the telegram chat through a bot API call
 def postImage(timestamp):
     doorbellBot.sendPhoto('@DoorbellCamTest', \
                 photo=open('/home/pi/Pictures/%s.jpg' % timestamp, 'rb'))
