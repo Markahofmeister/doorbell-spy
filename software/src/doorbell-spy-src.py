@@ -13,6 +13,7 @@ from datetime import datetime
 from signal import pause
 from time import sleep
 import telepot
+import creds
 
 # Initialize camera 
 camera = PiCamera()
@@ -28,7 +29,7 @@ pir = MotionSensor(4)
 passiveBuzzer = Buzzer(18)
 
 # Initialize the telegram bot object
-doorbellBot = telepot.Bot('5488078961:AAFaJivap_jWBhUzhWMHzKn7p_KTUw9bpF0')
+doorbellBot = telepot.Bot(creds.api_key)
 
 # Posts image to the telegram chat through a bot API call
 def postImage(timestamp):
